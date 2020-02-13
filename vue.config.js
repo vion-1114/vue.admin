@@ -53,6 +53,17 @@ module.exports = {
         hot: true, // 开启热加载
         hotOnly: false,
         proxy: null, // 设置代理
+        proxy: {
+            '/devApi': {
+                target: 'http://www.web-jshtml.cn/productapi',
+                ws: true, //是否代理websockets
+                changeOrigin: true, // 设置同源  默认false，是否需要改变原始主机头为目标URL
+                pathRewrite: {
+                    '^/devApi': ''
+                }
+            }
+        },
+
         overlay: {
             // 全屏模式下是否显示脚本错误
             warnings: true,
