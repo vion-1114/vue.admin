@@ -99,7 +99,6 @@
  * 如果没有default就需要花括号 -- default只存在一个
  */
 import { GetSms, Register, Login } from '@/api/login'
-// import { xxx } from '@/api/login.js'
 import { reactive, isRef, ref, toRefs, onMounted } from '@vue/composition-api'
 import {
   stripscript,
@@ -167,8 +166,8 @@ export default {
       { txt: '注册', current: false, type: 'register' }
     ])
     const ruleForm = reactive({
-      username: '',
-      password: '',
+      username: '1114303039@qq.com',
+      password: 'lt1234',
       passwords: '',
       code: ''
     })
@@ -292,18 +291,29 @@ export default {
         password: ruleForm.password,
         code: ruleForm.code
       }
-      Login(requestData)
+      root.$store
+        .dispatch('login/login', requestData)
         .then(response => {
           console.log(response)
-          let data = response.data
-          root.$message({
-            message: data.message,
-            type: 'success'
-          })
+          console.log('登陆成功')
+          root.$router.push({ name: 'Backstage' }) //路由跳转
         })
         .catch(error => {
           console.log(error)
         })
+      // Login(requestData)
+      //   .then(response => {
+      //     console.log(response)
+      //     let data = response.data
+      //     root.$message({
+      //       message: data.message,
+      //       type: 'success'
+      //     })
+      //     root.$router.push({ name: 'Backstage' }) //路由跳转
+      //   })
+      //   .catch(error => {
+      //     console.log(error)
+      //   })
     }
     /**
      * 注册
