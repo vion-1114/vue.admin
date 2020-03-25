@@ -1,0 +1,25 @@
+//菜单宽度
+$navMenu: 200px;
+$navMenuMin: 64px;
+$layoutHeader: 75px;
+//主颜色
+$mainColor: #ee7171cc;
+@mixin webkit($type, $value) {
+    -webkit-#{$type}: $value;
+    -moz-#{$type}: $value;
+    -o-#{$type}: $value;
+    -ms-#{$type}: $value;
+    #{$type}: $value;
+}
+
+@mixin labelDom($align, $width, $height) {
+    label {
+        float: left;
+        line-height: $height + px;
+        width: $width + px;
+        text-align: $align;
+    }
+    .warp-content {
+        margin-left: $width + px;
+    }
+}
