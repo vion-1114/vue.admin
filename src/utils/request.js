@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { Message } from 'element-ui'
+import { getToken, getUsername } from '@/utils/login'
 //请求的后台服务器
 const BASEURL = process.env.NODE_ENV === 'production' ? '' : '/devApi'
 
@@ -13,6 +14,10 @@ console.log(process.env.VUE_APP_ABC)
 service.interceptors.request.use(
     function(config) {
         // 在发送请求之前做些什么
+        //携带请求头
+        //tokey
+        config.headers['Tokey'] = getToken();
+        config.headers['UserName'] = getUsername();
         return config
     },
     function(error) {

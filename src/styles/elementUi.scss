@@ -20,3 +20,46 @@
 .el-submenu .is-active:hover {
     background-color: rgba(245, 108, 108, 0.2) !important;
 }
+
+// table样式
+div.el-table {
+    td,
+    th {
+        text-align: center;
+    }
+    th {
+        font-weight: bold;
+        color: #344a5f;
+    }
+}
+
+.el-button {
+    // padding-right: 0;
+}
+
+//dialog框
+.el-dialog {
+    width: 500px !important;
+    height: 400px !important;
+    .el-dialog__body {
+        padding: 30px 47px !important;
+    }
+    .el-dialog__footer {
+        text-align: center;
+        .el-button {
+            width: 150px !important;
+            height: 40px !important;
+            font-size: 15px;
+        }
+        .el-button+.el-button {
+            margin-left: 24px;
+        }
+    }
+}
+
+//form样式
+.el-form {
+    .el-form-item:last-child {
+        margin-bottom: 0 !important;
+    }
+}

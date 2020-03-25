@@ -11,7 +11,7 @@ import {
 } from '@/utils/login'
 Vue.use(Vuex)
 const state = {
-    isCollapse: JSON.parse(sessionStorage.getItem('isCollapse')) || false,
+    // isCollapse: JSON.parse(sessionStorage.getItem('isCollapse')) || false,
     token: '',
     userName: cookie.get('userName') || ''
 }
@@ -39,6 +39,7 @@ const actions = {
             Login(requestData)
                 .then(response => {
                     let data = response.data.data
+                        //存储用户信息
                     commit('SET_TOKEN', data.token)
                     commit('SET_USERNAME', data.username)
                     setToken(data.token)

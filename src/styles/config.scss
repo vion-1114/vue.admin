@@ -11,3 +11,15 @@ $mainColor: #ee7171cc;
     -ms-#{$type}: $value;
     #{$type}: $value;
 }
+
+@mixin labelDom($align, $width, $height) {
+    label {
+        float: left;
+        line-height: $height + px;
+        width: $width + px;
+        text-align: $align;
+    }
+    .warp-content {
+        margin-left: $width + px;
+    }
+}

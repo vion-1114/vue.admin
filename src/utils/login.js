@@ -1,5 +1,6 @@
 import cookie from 'cookie_js'
 
+//token cookie
 const adminToken = 'adminToken'
 const userName = 'userName'
 export function getToken() {
